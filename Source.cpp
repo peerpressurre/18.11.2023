@@ -60,6 +60,10 @@ public:
     string getName() const {
         return name;
     }
+
+    string getType() const {
+        return type;
+    }
 };
 
 
@@ -169,6 +173,8 @@ public:
         std::cout << "\nAfter adding object:\n";
         manager.displayAllReservoirs();
 
+        cout << endl;
+
         for (size_t i = 0; i < manager.getSize(); i++)
         {
             Reservoir& currentReservoir = manager[i];
@@ -180,10 +186,38 @@ public:
 
         Reservoir& currentReservoir = manager[1];
         Reservoir& currentReservoir2 = manager[2];
+        cout << "Area Comparison: " << endl;
         if (currentReservoir.operator<(currentReservoir2))
         {
-
+            cout << currentReservoir.getName() << "'s surface area (" << currentReservoir.calculateSurfaceArea() << ") is bigger then " << currentReservoir2.getName() << "'s (" << currentReservoir2.calculateSurfaceArea() << ")" << endl;
         }
-        currentReservoir.operator<(currentReservoir2);
+        else
+        {
+            cout << currentReservoir.getName() << "'s surface area (" << currentReservoir.calculateSurfaceArea() << ") is bigger then " << currentReservoir2.getName() << "'s (" << currentReservoir2.calculateSurfaceArea() << ")" << endl;
+        }
+
+        cout << "\nType Comparison: " << endl;
+        if (currentReservoir.sameType(currentReservoir2))
+        {
+            cout << currentReservoir.getName() << "'s type (" << currentReservoir.getType() << ") = " << currentReservoir2.getName() << "'s type (" << currentReservoir2.getType() << ")" << endl;
+        }
+        else
+        {
+            cout << currentReservoir.getName() << "'s type (" << currentReservoir.getType() << ") != " << currentReservoir2.getName() << "'s type (" << currentReservoir2.getType() << ")" << endl;
+        }
+
+        currentReservoir = manager[0];
+        cout << "\nType Comparison #2: " << endl;
+        if (currentReservoir.sameType(currentReservoir2))
+        {
+            cout << currentReservoir.getName() << "'s type (" << currentReservoir.getType() << ") = " << currentReservoir2.getName() << "'s type (" << currentReservoir2.getType() << ")" << endl;
+        }
+        else
+        {
+            cout << currentReservoir.getName() << "'s type (" << currentReservoir.getType() << ") != " << currentReservoir2.getName() << "'s type (" << currentReservoir2.getType() << ")" << endl;
+        }
+
+
+       
         return 0;
     }
