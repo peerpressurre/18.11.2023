@@ -216,8 +216,5 @@ public:
         {
             cout << currentReservoir.getName() << "'s type (" << currentReservoir.getType() << ") != " << currentReservoir2.getName() << "'s type (" << currentReservoir2.getType() << ")" << endl;
         }
-
-
-       
         return 0;
     }
