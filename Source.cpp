@@ -177,5 +177,13 @@ public:
             cout << "Surface Area: " << currentReservoir.calculateSurfaceArea() << endl;
             cout << endl;
         }
+
+        Reservoir& currentReservoir = manager[1];
+        Reservoir& currentReservoir2 = manager[2];
+        if (currentReservoir.operator<(currentReservoir2))
+        {
+
+        }
+        currentReservoir.operator<(currentReservoir2);
         return 0;
     }
